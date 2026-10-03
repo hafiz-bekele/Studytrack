@@ -1,0 +1,27 @@
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# SQLite database (created fresh on each deploy)
+backend/data/*.sqlite
+backend/data/*.sqlite-shm
+backend/data/*.sqlite-wal
+
+# Old JSON database
+backend/data/db.json
+
+# Uploaded files
+backend/data/uploads/
+
+# Built frontend (Railway builds this fresh)
+backend/public/
+
+# Secrets
+.env
+backend/.env
+
+# OS / editor
+*.log
+.DS_Store
+Thumbs.db
+dist/
