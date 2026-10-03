@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: studytrack
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install --prefix backend && npm install --prefix frontend && npm run build
+    startCommand: cd backend && node server.js
+    healthCheckPath: /api/health
+    disk:
+      name: studytrack-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 10000
+      - key: DATA_DIR
+        value: /data
